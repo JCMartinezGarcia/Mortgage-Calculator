@@ -1,0 +1,11 @@
+/*
+**---------------------------------------------
+** these are the styles (mobile first)
+**---------------------------------------------
+*/
+
+.calculatorPage {
+    display: flex;
+    height: 100%;
+    background-color: #243ab2a8;
+}

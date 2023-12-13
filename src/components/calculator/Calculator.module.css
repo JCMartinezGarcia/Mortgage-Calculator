@@ -1,0 +1,56 @@
+/*
+**---------------------------------------------
+** these are the styles (mobile first)
+**---------------------------------------------
+*/
+
+.calculatorContainer {
+    width: 50%;
+    margin: auto;
+}
+
+.calculatorContent {
+    display: block;
+    justify-content: space-between;
+}
+
+.calculatorContent div {
+    display: grid;
+}
+
+.calculatorContent small {
+    color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+/*
+**---------------------------------------------
+** these are the media quieries (mobile first)
+**---------------------------------------------
+*/
+
+/* 'small devices': '400px' */
+@media (min-width: 400px) {
+    .calculatorContainer h3 {
+        font-size: x-large;
+    }
+
+    .calculatorContainer p {
+        font-size: smaller;
+    }
+}
+
+/* 'tablet': '640px' */
+@media (min-width: 640px) {
+    .calculatorContent {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .calculatorContainer h3 {
+        font-size: x-large;
+    }
+
+    .calculatorContainer p {
+        font-size: small;
+    }
+}
