@@ -31,6 +31,7 @@ const Calculator: React.FC<CalculatorProps> = ({ mrt, rt, yrs }) => {
         rate: rt,
         years: yrs,
     });
+
     const [payment, setPayment] = useState<number>(0.00);
 
     /**
@@ -79,9 +80,10 @@ const Calculator: React.FC<CalculatorProps> = ({ mrt, rt, yrs }) => {
             <CardContent className={styles.calculatorContent}>
                 {/* ... (Input fields for amount, rate, and years) */}
                 <div>
-                    <label htmlFor="loan"><strong>Amount</strong></label>
+                    <label htmlFor="amount"><strong>Amount</strong></label>
                     <small>amount of the mortage</small>
                     <Input
+                        id="amount"
                         min={1}
                         name="mortgage"
                         type="number"
@@ -90,9 +92,10 @@ const Calculator: React.FC<CalculatorProps> = ({ mrt, rt, yrs }) => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="interest"><strong>Rate</strong></label>
+                    <label htmlFor="rate"><strong>Rate</strong></label>
                     <small>annual interest rate %</small>
                     <Input
+                        id="rate"
                         min={1}
                         name="rate"
                         type="number"
@@ -104,6 +107,7 @@ const Calculator: React.FC<CalculatorProps> = ({ mrt, rt, yrs }) => {
                     <label htmlFor="years"><strong>Years</strong></label>
                     <small>loan terms in years</small>
                     <Input
+                        id="years"
                         min={1}
                         name="years"
                         type="number"
