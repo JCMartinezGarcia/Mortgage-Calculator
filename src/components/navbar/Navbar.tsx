@@ -29,7 +29,7 @@ const Navbar = () => {
                         href="../"
                         className={buttonVariants({ variant: "outline" })}
                     >
-                        Log Out
+                        Exit
                     </Link>
                 </li>
             </ul>
