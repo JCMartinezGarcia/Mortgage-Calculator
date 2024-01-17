@@ -32,7 +32,7 @@ const Calculator: React.FC<CalculatorProps> = ({ mrt, rt, yrs }) => {
         years: yrs,
     });
 
-    const [payment, setPayment] = useState<number>(0.00);
+    const [payment, setPayment] = useState<String>('');
 
     /**
       * Effect to recalculate monthly payment when input values change
@@ -49,7 +49,8 @@ const Calculator: React.FC<CalculatorProps> = ({ mrt, rt, yrs }) => {
         const monthlyInterest = (rate / 100) / 12;
         const months = years * 12;
         const monthlyPayments = mortgage * (monthlyInterest * ((1 + monthlyInterest) ** months)) / ((1 + monthlyInterest) ** months - 1);
-        setPayment(monthlyPayments);
+        const monthAmount = monthlyPayments.toFixed(2);
+        setPayment(Number(monthAmount).toLocaleString())
     }
 
     /**
@@ -90,7 +91,7 @@ const Calculator: React.FC<CalculatorProps> = ({ mrt, rt, yrs }) => {
                         value={values.mortgage}
                         onChange={handleChange}
                     />
-                </div>
+                </div> &nbsp;
                 <div>
                     <label htmlFor="rate"><strong>Rate</strong></label>
                     <small>annual interest rate %</small>
@@ -102,7 +103,7 @@ const Calculator: React.FC<CalculatorProps> = ({ mrt, rt, yrs }) => {
                         value={values.rate}
                         onChange={handleChange}
                     />
-                </div>
+                </div> &nbsp;
                 <div>
                     <label htmlFor="years"><strong>Years</strong></label>
                     <small>loan terms in years</small>
@@ -118,7 +119,7 @@ const Calculator: React.FC<CalculatorProps> = ({ mrt, rt, yrs }) => {
             </CardContent>
             <CardFooter>
                 <h1><strong>Monthly Payment:</strong></h1>
-                <span>&nbsp;{payment.toFixed(2)}</span>
+                <span>&nbsp;{payment}</span>
             </CardFooter>
         </Card>
     );
